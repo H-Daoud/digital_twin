@@ -1,12 +1,49 @@
-# React + Vite
+# Digital Twin Decision Support App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Ein hybrides React + FastAPI System mit LLM + RAG Integration zur Simulation von Produktionskosten, Nachhaltigkeit und politischen Faktoren (CO₂, Zoll, Energie etc.) für mittelständische Industrieunternehmen.
 
-Currently, two official plugins are available:
+## Features
+- 🔁 Simulation mit Rückkopplung
+- 🧠 LLM + LangChain Integration
+- 📄 OCR für Eingabedokumente (Azure Form Recognizer)
+- 📊 BI-Dashboard mit Recharts
+- 🧩 Decision Layer zur Unterstützung bei Standortentscheidungen
+# STK Digital Twin (VW Sustainability Case)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This app simulates and evaluates factory operations using:
+- 🧠 Azure OpenAI LLM + RAG Chain
+- 🧾 Azure Form Recognizer OCR for financial uploads
+- 📊 Recharts visualization
+- 📦 Vite + React frontend
+- 🚀 FastAPI backend
 
-## Expanding the ESLint configuration
+## Features
+- Upload financial documents for ML-based decisions
+- Time-series production cost simulation
+- Feedback loops & factory sustainability logic
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Run Locally
+
+### Frontend
+```bash
+npm install
+npm run dev
+
+## Struktur
+- `src/`: Frontend (React + Vite)
+- `backend/`: API + LLM + OCR
+digital_twin/
+├── .gitignore
+├── README.md
+├── LICENSE
+├── package.json
+├── vite.config.js
+├── src/               ← React frontend
+├── backend/           ← Python FastAPI backend
+│   ├── main.py
+│   ├── ocr_handler.py
+│   ├── llm_chain.py
+│   ├── requirements.txt
+│   └── .env           ✅ HERE — for API keys & backend config
+└── .env (optional)    ⛔️ Only if frontend uses env vars (not common)
+
